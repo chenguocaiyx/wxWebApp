@@ -1,0 +1,99 @@
+/* page/mine/mine.wxss */
+.userinfo-avatar {
+    width: 150rpx;
+    height: 150rpx;
+    margin: 20rpx;
+     border-radius: 50%; 
+}
+
+.userinfo-nickname {
+    font-size: 32rpx;
+    /* color: #007AFF; */
+}
+.userinfo, .uploader, .tunnel {
+    margin-top: 40rpx;
+    height: 140rpx;
+    width: 100%;
+    /* background: #FFF; */
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: all 300ms ease;
+}
+.admin{
+    bottom: 0;
+    position: fixed;
+    width: 100vh;
+}
+.user{
+     /* display: flex; 
+     flex-direction: column; */
+     justify-content: space-around;
+     align-items: center;
+     align-content: center;
+     top: 0;
+     position: fixed;
+    
+}
+ .userImg{
+    top: 180rpx;
+    left: 280rpx;
+    position: fixed;
+}
+.userName{
+    top: 100rpx;
+    display: flex;
+    flex-direction: column;
+     position: relative; 
+    align-items: center;
+    height: 100rpx;
+    border-bottom-style: ridge;
+}
+.name{
+    align-items: center;
+} 
+.back{
+    width:100%;
+     height:0; 
+    padding-bottom: 37.5%;
+    overflow:hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+        /* margin: 7rpx;   */
+     /* margin-right: 5rpx ;  */
+      /* border-radius: 5px;   */
+       -webkit-filter: blur(0px); 
+       filter: blur(0px); 
+       /* opacity: 0.7;  */
+}
+
+.view{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.list__item {
+    position: relative;
+top: 150rpx;
+  margin: 0px 20rpx;
+   /* background-color: #FFFFFF;  */
+  border-radius: 2px;
+  overflow: hidden;
+  padding: 20rpx;
+  border-bottom-style: ridge;
+}
+.mine{
+    background-color: #FFFFFF; 
+    height: 100vh;
+}
+.logged{
+    top: 100rpx;
+    position: relative;
+}

@@ -1,0 +1,7 @@
+<!--page/admin/admin.wxml-->
+<view wx:for="{{button}}" wx:key="{{index}}" class='admin'>
+    <button id="{{index}} "bindtap='admin'>{{item.name}}</button>
+</view>
+<view class='backView'>
+    <image src='/image/back.png' class='backIcon' bindtap='back'></image>
+</view>

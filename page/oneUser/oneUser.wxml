@@ -1,0 +1,73 @@
+<!--page/oneUser/oneUser.wxml-->
+<view class='page'>
+
+    <view class='top-view'>
+        <image style="background-image:url({{userInfo.avatarUrl}})" class='back'></image>
+        <view>
+            <image bindtap='login' class="userinfo-avatar userImg" src="{{userInfo.avatarUrl}}"></image>
+
+            <view class='userName'>
+                <text class="name">{{userInfo.userName}}</text>
+                <view class='text'>
+                    <text>{{showText}}</text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <view class="bottom-view ">
+        <view class='weui-tab__panel'>
+            <scroll-view scroll-y="true" class="tab_panel">
+                <view class='f0'>
+                    <view wx:for="{{images}}">
+                        <block wx:if="{{showText == '作品展示'}}">
+                            <image style="background-image:url({{item.postImgUrl}})" class='image' bindtap='getImg' data-object-id='{{item.objectId}}' data-img-url='{{item.postImgUrl}}' data-source='{{item.openId}}'></image>
+                        </block>
+                        <block wx:if="{{showText == '我的收藏'}}">
+                            <image style="background-image:url({{item.collectionImgUrl}})" class='image' bindtap='getImg' data-object-id='{{item.source}}' data-img-url='{{item.collectionImgUrl}}' data-source='{{item.postOpenId}}'></image>
+                        </block>
+                        <block wx:if="{{showText == '我的投稿'}}">
+                            <image style="background-image:url({{item.postImgUrl}})" class='image' bindtap='getImg' data-object-id='{{item.objectId}}' data-img-url='{{item.postImgUrl}}' data-source='{{item.openId}}'></image>
+                        </block>
+                       
+                    </view>
+                    
+                </view>
+                <view wx:for="{{userMsg}}">
+                 <block wx:if="{{showText == '粉丝' || showText == '关注'}}">
+                           
+                            <view class="weui-cells weui-cells_after-title" data-openId='{{item.openId}}' bindtap='getUser'>
+                                <view class="weui-cell">
+                                    <view class="weui-cell__hd">
+                                        <image src="{{item.avatarUrl}}" style="margin-right: 50px;vertical-align: middle;width:50px; height: 50px;"></image>
+                                    </view>
+                                    <!-- <view class="weui-cell__bd">标题文字</view> -->
+                                    <view class="weui-cell__ft">{{item.userName}}</view>
+                                </view>
+                               
+                            </view>
+                        </block>
+                </view>
+                
+                <view class='end'>
+                    <text style='font-size:16px;'>---End---</text>
+                </view>
+            </scroll-view>
+        </view>
+
+
+    </view>
+    <view class='care-view'>
+        <!-- <button bindtap='likeOne'>关注</button> -->
+        <image src="{{like ? '/image/care2.png' : '/image/care1.png'}}" class='care-img' bindtap='likeOne'></image>
+    </view>
+    <view class='fans'>
+        <text bindtap='fans'>粉丝: {{userInfo.fans}}</text>
+    </view>
+    <view class='care'>
+        <text bindtap='likes'>关注: {{userInfo.care}}</text>
+    </view>
+    <view class='backView'>
+        <image src='/image/back.png' class='backIcon' bindtap='back'></image>
+    </view>
+</view>

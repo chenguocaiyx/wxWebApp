@@ -1,0 +1,7 @@
+<!--page/post/post.wxml-->
+<view class='post'>
+    <image src='/image/add1.png' class='image'></image>
+    <text>{{flag ? "" : "请登录后再进行操作！！！"}}</text>
+    <button bindtap='post'>我要投稿</button>
+</view>
+

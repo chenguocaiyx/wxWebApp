@@ -1,0 +1,14 @@
+/* page/admin/admin.wxss */
+.admin{
+    position: relative;
+    top: 130rpx;
+}
+.backIcon{
+    width: 80rpx;
+    height: 80rpx;
+}
+.backView{
+    position: fixed;
+    top: 50rpx;
+    left: 50rpx;
+}

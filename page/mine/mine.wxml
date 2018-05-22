@@ -1,0 +1,60 @@
+<!-- page/mine/mine.wxml -->
+<view class='mine'>
+  <!-- 用户登录 -->
+  <!-- <view class='userinfo' bindtap='login'>
+       <image
+            class="userinfo-avatar"
+            src="{{logged ? userInfo.avatarUrl : ' /image/user-unlogin.png'}}"
+            background-size="cover"
+        ></image>
+        <text class="userinfo-nickname">{{logged ? userInfo.nickName : '登录'}}</text>
+        <text class="userinfo-nickname" wx:if="{{logged}}">{{userInfo.lastLoginTime}}</text>
+    </view> -->
+  <image style="background-image:url({{logged ? userInfo.avatarUrl : imgUrl}})" class='back'></image>
+  <!-- <view class='user' bindtap='login'> -->
+  <view>
+
+    <image bindtap="{{logged ? 'oneUser' : 'login'}}" class="userinfo-avatar userImg" src="{{logged ? userInfo.avatarUrl : ' /image/user-unlogin.png'}}"></image>
+
+
+    <view class='fans'>
+      <text bindtap='fans'>粉丝: {{ user.fans}}</text>
+    </view>
+    <view class='care'>
+      <text bindtap='likes'>关注: {{ user.care}}</text>
+    </view>
+  </view>
+
+  <view class='userName'>
+    <block wx:if="{{logged}}">
+      <text class="name">{{userInfo.nickName}}</text>
+    </block>
+    <block wx:if="{{!logged}}">
+      <button class='name' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>登录</button>
+    </block>
+  </view>
+  <view>
+
+  </view>
+  <view class='logged' hidden='{{!logged}}'>
+    <view class='list__item' bindtap='collView'>
+      <text>我的收藏</text>
+    </view>
+    <view class='list__item' bindtap='postView'>
+      <text>我的投稿</text>
+    </view>
+    <view class='list__item'>
+      <text>调戏作者</text>
+    </view>
+    <view class='list__item'>
+      <text>关于</text>
+    </view>
+    <view class='list__item' hidden="{{openId != 'odEEN0Z4c0bw4ZYCxedZg40iky1Q'}}">
+      <button bindtap='admin'>管理中心</button>
+    </view>
+  </view>
+
+  <!-- </view> -->
+
+
+</view>

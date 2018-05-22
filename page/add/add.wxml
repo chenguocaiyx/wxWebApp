@@ -1,0 +1,24 @@
+<!--page/add/add.wxml-->
+<!-- 上传图片测试 -->
+<!-- <view class='container'> 
+<view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+</view> -->
+<view class='view'>
+    <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='addClassify'>{{text}}</button>
+    <image style="background-image:url({{imgUrl}})" class='classify-image'></image>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <button type="default">{{flag ? classify : "选择分类"}}</button>
+    </picker>
+    <button bindtap='putImg'>投稿</button>
+</view>
+<view class='backView'>
+    <image src='/image/back.png' class='backIcon' catchtap='back'></image>
+</view>

@@ -1,0 +1,68 @@
+<!-- <image src='/image/back.png' class='backIcon'></image> -->
+ <view class="weui-navbar">
+    <block wx:for-items="{{tabs}}" wx:key="{{index}}">
+        <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+        </view>
+    </block>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+</view> 
+
+ <view class="weui-tab__panel">
+<!-- 精选图片 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+    <scroll-view scroll-y="true" bindscrolltolower="lower" lower-threshold="0" style="height:100%;">
+    <view class="waterfall">
+        <view class="view" style="margin-right:20rpx">
+            <view wx:for="{{Arr1}}" wx:key="id">
+                <image src="{{item.imgUrl}}" mode="widthFix" bindtap="getImg" data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' data-source='{{item.source}}' class='image'></image>
+              
+            </view>
+        </view>
+        <view class="view">
+            <view wx:for="{{Arr2}}" wx:key="id">
+                <image src="{{item.imgUrl}}" mode="widthFix" bindtap="getImg" data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' data-source='{{item.source}}' class='image'></image>
+                
+            </view>
+        </view>
+    </view>
+</scroll-view>
+    </view>
+    <!-- 推荐图片 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+         <scroll-view scroll-y="true" bindscrolltolower="lower" lower-threshold="0" style="height:100%;">
+    <view class="waterfall">
+        <view class="view" style="margin-right:20rpx">
+            <view wx:for="{{Arr1}}" wx:key="id">
+                <image src="{{item.imgUrl}}" mode="widthFix" bindtap='getImg' data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' data-source='{{item.source}}' class='image'></image>
+            </view>
+        </view>
+        <view class="view">
+            <view wx:for="{{Arr2}}" wx:key="id">
+                <image src="{{item.imgUrl}}" mode="widthFix" bindtap='getImg' data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' data-source='{{item.source}}' class='image'></image>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+    </view>
+    <!-- 热门图片 -->
+    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+    <scroll-view scroll-y="true" bindscrolltolower="lower" lower-threshold="0" style="height:100%;">
+    <view class="waterfall">
+        <view class="view" style="margin-right:20rpx">
+            <view wx:for="{{Arr1}}" wx:key="id">
+                <image src="{{item.imgUrl}}" mode="widthFix"  bindtap='getImg' data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' data-source='{{item.source}}' class='image'></image>
+                
+            </view>
+        </view>
+        <view class="view">
+            <view wx:for="{{Arr2}}" wx:key="id">
+                <image src="{{item.imgUrl}}" mode="widthFix"  bindtap='getImg' data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' data-source='{{item.source}}' class='image'></image>
+                
+            </view>
+        </view>
+    </view>
+</scroll-view>
+    </view>
+</view> 
+

@@ -1,0 +1,43 @@
+<!--page/admindetail/admindetail.wxml-->
+<view class='aa'>
+   <view hidden='{{indexid !=0}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='addImg'>添加精选壁纸</button>
+        </view> 
+         <view hidden='{{indexid !=2}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='addRmImg'>添加热门壁纸</button>
+        </view> 
+        <view hidden='{{indexid !=1}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap=''>添加推荐壁纸</button>
+        </view> 
+         <view hidden='{{indexid !=4}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='addClassify'>添加分类壁纸</button>
+         <image style="background-image:url({{imgUrl}})" class='classify-image'></image>
+           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <button type="default">{{flag ? classify : "选择分类"}}</button>
+            </picker>
+         <button bindtap='putImg'>确认上传</button>
+        </view> 
+<swiper class='swiper-view' previous-margin='50rpx' next-margin='50rpx'>
+    <swiper-item wx:for="{{image}}">
+        <view class='view'>
+        <image class='image' src='{{item.imgUrl}}'></image>
+        <view hidden='{{indexid !=3}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='submit' data-source='{{item.source}}' data-classify='{{item.classify}}'>发布</button>
+        </view>
+        <view hidden='{{indexid !=0}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='rmJxImg'>删除</button>
+        </view>
+         <view hidden='{{indexid !=1}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='rmTjImg'>删除</button>
+        </view>
+        <view hidden='{{indexid !=2}}'>
+         <button data-object-id='{{item.objectId}}' data-img-url='{{item.imgUrl}}' bindtap='rmRmImg'>删除</button>
+        </view>
+        </view>
+    </swiper-item>
+
+</swiper>
+</view>
+<view class='backView'>
+    <image src='/image/back.png' class='backIcon' bindtap='back'></image>
+</view>

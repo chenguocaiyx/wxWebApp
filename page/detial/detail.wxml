@@ -1,0 +1,29 @@
+<!--page/detial/detail.wxml-->
+
+   <view class='detail'> 
+    <image style="background-image:url({{imgUrl}}" class='detail-image' bindtap='previewImage'></image>
+        
+   </view> 
+     <view class='user'>
+    <text>From: {{userInfo.userName}}</text>
+     <image src='{{userInfo.avatarUrl}}' class='userinfo-avatar' bindtap='oneUser'></image> 
+    <view class='bu'>
+    <text class='end'>-End-</text>
+    </view>
+    </view> 
+    <view class='dh'>
+    <!-- <text class='text' bindtap='backHome'>返回</text> -->
+    <image bindtap='backHome' class='text' src='/image/hw.png'></image>
+    <!-- <text class='text' bindtap='download'>下载</text> -->
+    <image class='text' src='/image/dw.png'></image>
+    <!-- <text class='text'>收藏</text> -->
+    <image class='text' src="{{like ? '/image/coll2.png' : '/image/cw.png'}}" bindtap='collImg'></image>
+    <!-- <text class='text'>分享</text> -->
+    <image class='text' src='/image/fxw.png'></image>
+    
+  </view>
+  <view class='backView'>
+      <image src='/image/back.png' class='backIcon' bindtap='backHome'></image>
+</view>
+  
+   
